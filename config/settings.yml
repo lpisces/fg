@@ -1,0 +1,7 @@
+App:
+  name: 'app'
+  domain: 'app.com'
+
+
+Nav:
+  items: [{cname: '系统设置', ename: 'settings', link: '/settings'}]
