@@ -1,5 +1,6 @@
 class AccountController < ApplicationController
+  layout 'admin'
   def register
-    @identity = Identity.new
+    @identity = env['omniauth.identity']
   end
 end

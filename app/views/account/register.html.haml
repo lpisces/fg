@@ -1,6 +1,33 @@
-= simple_form_for @identity, :url => '/auth/identity/register' do |f|
-  %h1 Create an Account
-  = f.input :email, :input_html => {:name => 'email'}
-  = f.input :password, :as => 'password', :input_html => {:name => 'password'}
-  = f.input :password_confirmation, :label => "Confirm Password", :as => 'password', :input_html => {:name => 'password_confirmation'}
-  %button{:type => 'submit'} Sign Up
+.block.span12{:style => 'margin:0px;'}
+  .navbar{:style => 'margin:0px;'}
+    .navbar-inner{:style => 'line-height:30px;'}
+      %strong
+        注册账号
+
+  .b{:style => 'padding-top:10px;margin:0px -1px;height:240px;border-top:none;border:1px solid #eee;'}
+    .clearfix{:style => 'height:30px;'}
+    = form_tag('/auth/identity/register', {:class => 'form-horizontal'}) do
+      .control-group
+        %label.control-label{:for => "inputEmail", :style => 'width:80px;'} Email
+        .controls{:style => 'margin-left:100px;'}
+          %input#inputEmail{:placeholder => "Email", :type => "text", :name => 'email'}
+            - if !@identity.nil? && !@identity.errors.nil? && !@identity.errors[:email].nil?
+              %span= @identity.errors[:email].first.to_s
+
+      .control-group
+        %label.control-label{:for => "inputPassword", :style => 'width:80px;'} 密码
+        .controls{:style => 'margin-left:100px;'}
+          %input#inputPassword{:type => "password", :name => 'password'}
+
+      .control-group
+        %label.control-label{:for => "inputPasswordConfirmation", :style => 'width:80px;'} 重复密码
+        .controls{:style => 'margin-left:100px;'}
+          %input#inputPasswordConfirmation{:type => "password", :name => 'password_confirmation'}
+
+      .control-group
+        .controls{:style => 'margin-left:100px;'}
+          %button.btn.btn-mini.btn-success{:type => "submit"} 注册
+          %a.btn.btn-mini{:href => '/login'}  已有账号？  →
+
+.clearfix.span25{:style => 'height:30px;'}
+

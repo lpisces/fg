@@ -34,4 +34,7 @@ Fg::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.breakpoint_server = true  
+  require "ruby-debug" 
 end

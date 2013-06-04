@@ -1,0 +1,23 @@
+.block.span12{:style => 'margin:0px;'}
+  .navbar{:style => 'margin:0px;'}
+    .navbar-inner{:style => 'line-height:30px;'}
+      %strong
+        登录
+
+  .b{:style => 'padding-top:10px;margin:0px -1px;height:180px;border-top:none;border:1px solid #eee;'}
+    .clearfix{:style => 'height:30px;'}
+    = form_tag({:url => '/auth/identity'}, {:class => 'form-horizontal'}) do
+      .control-group
+        %label.control-label{:for => "inputEmail", :style => 'width:80px;'} Email
+        .controls{:style => 'margin-left:100px;'}
+          %input#inputEmail{:placeholder => "Email", :type => "text", :name => 'email'}
+
+      .control-group
+        %label.control-label{:for => "inputPassword", :style => 'width:80px;'} 密码
+        .controls{:style => 'margin-left:100px;'}
+          %input#inputPassword{:type => "password", :name => 'password'}
+
+      .control-group
+        .controls{:style => 'margin-left:100px;'}
+          %button.btn.btn-mini.btn-success{:type => "submit"} 登陆
+          %a.btn.btn-mini{:href => '/register'}  没有账号？  →
