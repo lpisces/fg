@@ -44,7 +44,7 @@ class SettingsController < ApplicationController
   def contact_save
     @contact = Sysconfig.where(:key => 'contact').first_or_create
     @contact.update_attribute(:value, params[:contact])
-    redirect_to :settings_about, :notice => '更新成功'
+    redirect_to :settings_contact, :notice => '更新成功'
   end
 
 end

@@ -30,9 +30,9 @@
 
     = form_tag('/settings/contact_save', {:class => 'form-horizontal'}) do
       .control-group
-        %label.control-label{:for => "title", :style => 'width:80px;'} 关于我们
+        %label.control-label{:for => "contact", :style => 'width:80px;'} 联系我们
         .controls{:style => 'margin-left:100px;'}
-          %textarea#contact{:name => 'about'}= @contact.value
+          %textarea#contact{:name => 'contact'}= @contact.value
   
       .control-group
         .controls{:style => 'margin-left:100px;'}

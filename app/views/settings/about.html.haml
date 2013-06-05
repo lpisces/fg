@@ -30,7 +30,7 @@
 
     = form_tag('/settings/about_save', {:class => 'form-horizontal'}) do
       .control-group
-        %label.control-label{:for => "title", :style => 'width:80px;'} 联系我们
+        %label.control-label{:for => "about", :style => 'width:80px;'} 关于我们
         .controls{:style => 'margin-left:100px;'}
           %textarea#about{:name => 'about'}= @about.value
   
