@@ -1,0 +1,39 @@
+.block.span5.pull-left{:style => 'margin:0px;'}
+  .navbar{:style => 'margin:0px;'}
+    .navbar-inner{:style => 'line-height:30px;'}
+      系统设置
+
+  .b{:style => 'padding-top:10px;margin:0px -1px;height:200px;border-top:none;'}
+    %ul.nav.nav-tabs.nav-stacked
+      %li
+        %a{:href => "/settings/sysconfig", :tabindex => "-1"} 系统信息
+      %li
+        %a{:href => "/settings/about", :tabindex => "-1"} 关于我们
+      %li.active
+        %a{:href => "/settings/contact", :tabindex => "-1"} 联系我们
+
+
+.block.span19.pull-left{:style => 'height:200px;margin-left:45px;'}
+  - if flash[:notice]
+    .alert.alert-success.alert-block{:style => ''}
+      %button.close{"data-dismiss" => "alert", :type => "button"} &times;
+      = flash[:notice]
+
+  .navbar{:style => 'margin:0px;'}
+    .navbar-inner{:style => 'line-height:30px;'}
+      联系我们
+
+  .clearfix.span20{:style => 'height:40px;'}
+
+  .b{:style => 'padding-top:10px;margin:0px -1px;height:400px;border-top:none;border:1px solid #eee;'}
+
+
+    = form_tag('/settings/about_save', {:class => 'form-horizontal'}) do
+      .control-group
+        %label.control-label{:for => "title", :style => 'width:80px;'} 联系我们
+        .controls{:style => 'margin-left:100px;'}
+          %textarea#about{:name => 'about'}= @about.value
+  
+      .control-group
+        .controls{:style => 'margin-left:100px;'}
+          %button.btn.btn-mini.btn-success{:type => "submit"} 保存

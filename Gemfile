@@ -25,3 +25,5 @@ gem 'omniauth-identity'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem "rails_config"
 gem 'debugger'
+
+gem 'rails_kindeditor', '~> 0.3.19'

@@ -12,6 +12,9 @@ Fg::Application.routes.draw do
   # settings
   match '/settings', :to => "settings#index"
   match '/settings/about', :to => "settings#about"
+  match '/settings/about_save', :to => "settings#about_save"
   match '/settings/contact', :to => "settings#contact"
+  match '/settings/contact_save', :to => "settings#contact_save"
   match '/settings/sysconfig', :to => "settings#sysconfig"
+  match '/settings/sysconfig_save', :to => "settings#sysconfig_save"
 end

@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Sysconfig.where(:key => 'title').first_or_create
+Sysconfig.where(:key => 'keywords').first_or_create
+Sysconfig.where(:key => 'description').first_or_create

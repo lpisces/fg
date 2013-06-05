@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605053404) do
+ActiveRecord::Schema.define(:version => 20130605094807) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(:version => 20130605053404) do
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "kindeditor_assets", :force => true do |t|
+    t.string   "asset"
+    t.integer  "file_size"
+    t.string   "file_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sysconfigs", :force => true do |t|

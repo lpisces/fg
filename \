@@ -6,11 +6,11 @@
   .b{:style => 'padding-top:10px;margin:0px -1px;height:200px;border-top:none;'}
     %ul.nav.nav-tabs.nav-stacked
       %li
-        %a{:href => "/settings/sysconfig", :tabindex => "-1"} 系统信息
+        %a{:href => "#", :tabindex => "-1"} 系统信息
+      %li.active
+        %a{:href => "#", :tabindex => "-1"} 关于我们
       %li
-        %a{:href => "/settings/about", :tabindex => "-1"} 关于我们
-      %li.contact
-        %a{:href => "/settings/contact", :tabindex => "-1"} 联系我们
+        %a{:href => "#", :tabindex => "-1"} 联系我们
 
 
 .block.span19.pull-left{:style => 'height:200px;margin-left:45px;'}
@@ -21,18 +21,19 @@
 
   .navbar{:style => 'margin:0px;'}
     .navbar-inner{:style => 'line-height:30px;'}
-      联系我们
+      关于我们
 
   .clearfix.span20{:style => 'height:40px;'}
 
   .b{:style => 'padding-top:10px;margin:0px -1px;height:400px;border-top:none;border:1px solid #eee;'}
 
 
-    = form_tag('/settings/contact_save', {:class => 'form-horizontal'}) do
+    = form_tag('/settings/sysconfig_save', {:class => 'form-horizontal'}) do
       .control-group
-        %label.control-label{:for => "title", :style => 'width:80px;'} 关于我们
+        %label.control-label{:for => "title", :style => 'width:80px;'} 网站标题
         .controls{:style => 'margin-left:100px;'}
-          %textarea#contact{:name => 'about'}= @contact.value
+          %input#about{:type => "text", :name => 'title', :value => @about.value}
+  
   
       .control-group
         .controls{:style => 'margin-left:100px;'}
