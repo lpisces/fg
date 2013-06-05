@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604061828) do
+ActiveRecord::Schema.define(:version => 20130605053404) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -22,19 +22,27 @@ ActiveRecord::Schema.define(:version => 20130604061828) do
   end
 
   create_table "identities", :force => true do |t|
-    t.string   "username"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "sysconfigs", :force => true do |t|
+    t.string   "key"
+    t.string   "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "nickname"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "remember_token"
+    t.boolean  "is_admin"
   end
 
 end

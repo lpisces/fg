@@ -1,14 +1,16 @@
 class SessionController < ApplicationController
   layout 'admin'
+  include SessionHelper
 
   def create
     user = User.auth_or_create(request.env['omniauth.auth'])
-    debugger
     sign_in(user)
-    redirect_to '/'
+    redirect_to root_path
   end
 
   def destroy
+    sign_out
+    redirect_to root_path
   end
 
   def new

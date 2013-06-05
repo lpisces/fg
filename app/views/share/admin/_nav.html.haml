@@ -1,26 +1,28 @@
 .navbar
   .navbar-inner
     %a.brand{:href => "/"}= Settings.App.name
-    %ul.nav
-      - Settings.Nav.items.each do |i|
-        - if self.controller_name.to_s == i.ename
-          %li.active
-            %a{:href => i.link}= i.cname
-        - else
-          %li
-            %a{:href => i.link}= i.cname
+    - if admin?
+      %ul.nav
+        - Settings.Nav.items.each do |i|
+          - if self.controller_name.to_s == i.ename
+            %li.active
+              %a{:href => i.link}= i.cname
+          - else
+            %li
+              %a{:href => i.link}= i.cname
 
-    .btn-group.pull-right
-      %button.btn.btn-mini.dropdown-toggle{"data-toggle" => "dropdown", :style => 'margin-top:5px;'}
-        Small button
-        %span.caret
-      %ul.dropdown-menu
-        %li
-          %a{:href => "#"} Action
-        %li
-          %a{:href => "#"} Another action
-        %li
-          %a{:href => "#"} Something else here
-        %li.divider
-        %li
-          %a{:href => "#"} Separated link
+    - if signed_in?
+      .btn-group.pull-right
+        %button.btn.btn-mini.dropdown-toggle{"data-toggle" => "dropdown", :style => 'margin-top:5px;'}
+          = current_user.email
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => "#"} Action
+          %li
+            %a{:href => "#"} Another action
+          %li
+            %a{:href => "#"} Something else here
+          %li.divider
+          %li
+            %a{:href => "/logout"} 登出

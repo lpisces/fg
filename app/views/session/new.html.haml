@@ -6,11 +6,11 @@
 
   .b{:style => 'padding-top:10px;margin:0px -1px;height:180px;border-top:none;border:1px solid #eee;'}
     .clearfix{:style => 'height:30px;'}
-    = form_tag({:url => '/auth/identity'}, {:class => 'form-horizontal'}) do
+    = form_tag('/auth/identity/callback', {:class => 'form-horizontal'}) do
       .control-group
-        %label.control-label{:for => "inputEmail", :style => 'width:80px;'} Email
+        %label.control-label{:for => "auth_key", :style => 'width:80px;'} Email
         .controls{:style => 'margin-left:100px;'}
-          %input#inputEmail{:placeholder => "Email", :type => "text", :name => 'email'}
+          %input#inputEmail{:placeholder => "Email", :type => "text", :name => 'auth_key'}
 
       .control-group
         %label.control-label{:for => "inputPassword", :style => 'width:80px;'} 密码

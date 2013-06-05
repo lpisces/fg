@@ -1,6 +1,6 @@
 # encoding : utf-8
 class Identity < OmniAuth::Identity::Models::ActiveRecord
-  attr_accessible :email, :password_digest, :username, :password, :password_confirmation
+  attr_accessible :email, :password_digest, :password, :password_confirmation
 
   validates :email, :uniqueness => {:case_sensitive => false, :message => "Email 已经存在。"}
   validates :password, :confirmation => {:message => '密码输入不一致。'}
