@@ -27,3 +27,5 @@ gem "rails_config"
 gem 'debugger'
 
 gem 'rails_kindeditor', '~> 0.3.19'
+
+gem 'carrierwave'
