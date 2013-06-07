@@ -1,5 +1,8 @@
 Fg::Application.routes.draw do
 
+  resources :categories
+
+
   root :to => "dashboard#index"
 
   # login/logout/regsiter

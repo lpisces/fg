@@ -1,0 +1,43 @@
+.block.span5.pull-left{:style => 'margin:0px;'}
+  .navbar{:style => 'margin:0px;'}
+    .navbar-inner{:style => 'line-height:30px;'}
+      内容管理
+
+  .b{:style => 'padding-top:10px;margin:0px -1px;height:200px;border-top:none;'}
+    %ul.nav.nav-tabs.nav-stacked
+      %li.active
+        %a{:href => "/categories", :tabindex => "-1"} 分类管理
+
+.block.span19.pull-left{:style => 'height:800px;margin-left:45px;'}
+  - if flash[:notice]
+    .alert.alert-success.alert-block{:style => ''}
+      %button.close{"data-dismiss" => "alert", :type => "button"} &times;
+      = flash[:notice]
+
+  .navbar{:style => 'margin:0px;'}
+    .navbar-inner{:style => 'line-height:30px;'}
+      分类列表
+
+  .clearfix.span20{:style => 'height:20px;'}
+
+  .b{:style => 'padding:10px;margin:0px -1px;height:700px;border-top:none;border:1px solid #eee;'}
+
+    %table.table.table-bordered.table-striped
+      %tr
+        %th Name
+        %th Ename
+        %th Sort
+        %th
+        %th
+        %th
+    
+      - @categories.each do |category|
+        %tr
+          %td= category.name
+          %td= category.ename
+          %td= category.sort
+          %td= link_to 'Show', category
+          %td= link_to 'Edit', edit_category_path(category)
+          %td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    
+    %a.btn.btn-mini.btn-success.pull-right{:href => new_category_path, :target => '_blank'} 新增分类

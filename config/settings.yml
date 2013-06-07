@@ -4,4 +4,4 @@ App:
 
 
 Nav:
-  items: [{cname: '系统设置', ename: 'settings', link: '/settings'}]
+  items: [{cname: '系统设置', ename: 'settings', link: '/settings'}, {cname: '内容管理', ename: 'content', link: '/categories'}]
