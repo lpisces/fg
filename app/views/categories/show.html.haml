@@ -1,15 +1,18 @@
+.page-header
+  展示分类
+
 %p#notice= notice
 
 %p
-  %b Name:
+  %b 中文名:
   = @category.name
 %p
-  %b Ename:
+  %b 英文名:
   = @category.ename
 %p
-  %b Sort:
+  %b 排序:
   = @category.sort
 
-= link_to 'Edit', edit_category_path(@category)
+= link_to '修改', edit_category_path(@category), :class => 'btn btn-mini btn-primary'
 \|
-= link_to 'Back', categories_path
+= link_to '返回', categories_path, :class => 'btn btn-mini'

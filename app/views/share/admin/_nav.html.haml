@@ -4,7 +4,7 @@
     - if admin?
       %ul.nav
         - Settings.Nav.items.each do |i|
-          - if self.controller_name.to_s == i.ename
+          - if i.ename.include? self.controller_name.to_s
             %li.active
               %a{:href => i.link}= i.cname
           - else
@@ -18,11 +18,7 @@
           %span.caret
         %ul.dropdown-menu
           %li
-            %a{:href => "#"} Action
-          %li
-            %a{:href => "#"} Another action
-          %li
-            %a{:href => "#"} Something else here
+            %a{:href => "#"} 
           %li.divider
           %li
             %a{:href => "/logout"} 登出

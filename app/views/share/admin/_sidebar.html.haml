@@ -1,0 +1,14 @@
+.block.span5.pull-left{:style => 'margin:0px;'}
+  .navbar{:style => 'margin:0px;'}
+    .navbar-inner{:style => 'line-height:30px;'}
+      = Settings.Sidebar[@module][:cname]
+
+  .b{:style => 'padding-top:10px;margin:0px -1px;height:200px;border-top:none;'}
+    %ul.nav.nav-tabs.nav-stacked
+      - Settings.Sidebar[@module][:items].each do |i|
+        - if self.controller_name.to_s == i.ename
+          %li.active
+            %a{:href => i.link, :tabindex => "-1"}= i.cname
+        - else 
+          %li
+            %a{:href => i.link, :tabindex => "-1"}= i.cname

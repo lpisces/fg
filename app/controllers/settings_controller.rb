@@ -2,7 +2,6 @@
 class SettingsController < ApplicationController
   layout 'admin'
   include SessionHelper
-
   before_filter :require_admin
 
   def index
