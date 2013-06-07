@@ -4,7 +4,7 @@ App:
 
 
 Nav:
-  items: [{cname: '系统设置', ename: ['settings'], link: '/settings'}, {cname: '内容管理', ename: ['content', 'categories', ''], link: '/categories'}]
+  items: [{cname: '系统设置', ename: ['settings'], link: '/settings'}, {cname: '内容管理', ename: ['content', 'categories', 'tags', 'items'], link: '/categories'}]
 
 
 Sidebar:
@@ -23,6 +23,11 @@ Sidebar:
             cname: '标签管理', 
             ename: 'tags', 
             link: '/tags'
+          },
+          {
+            cname: '游戏管理', 
+            ename: 'items', 
+            link: '/items'
           }
         ]
     }

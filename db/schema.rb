@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607054158) do
+ActiveRecord::Schema.define(:version => 20130607083838) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(:version => 20130607054158) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.string   "ename"
+    t.string   "flash"
+    t.string   "bimg"
+    t.string   "mimg"
+    t.string   "simg"
+    t.string   "desc"
+    t.string   "howto"
+    t.string   "target"
+    t.string   "size"
+    t.string   "params"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "kindeditor_assets", :force => true do |t|
     t.string   "asset"
     t.integer  "file_size"
@@ -49,6 +65,13 @@ ActiveRecord::Schema.define(:version => 20130607054158) do
     t.string   "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.integer  "sort",       :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "users", :force => true do |t|

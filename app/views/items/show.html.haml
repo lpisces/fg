@@ -1,0 +1,42 @@
+.page-header
+  展示
+
+%p#notice= notice
+
+%p
+  %b Name:
+  = @item.name
+%p
+  %b Ename:
+  = @item.ename
+%p
+  %b Flash:
+  = @item.flash
+%p
+  %b Bimg:
+  = @item.bimg
+%p
+  %b Mimg:
+  = @item.mimg
+%p
+  %b Simg:
+  = @item.simg
+%p
+  %b Desc:
+  = @item.desc
+%p
+  %b Howto:
+  = @item.howto
+%p
+  %b Target:
+  = @item.target
+%p
+  %b Size:
+  = @item.size
+%p
+  %b Params:
+  = @item.params
+
+= link_to '修改', edit_item_path(@item), :class => 'btn btn-mini btn-primary'
+\|
+= link_to '返回', items_path, :class => 'btn btn-mini'

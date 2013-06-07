@@ -9,7 +9,7 @@
 
   .navbar{:style => 'margin:0px;'}
     .navbar-inner{:style => 'line-height:30px;'}
-      分类管理
+      游戏管理
 
   .clearfix.span20{:style => 'height:20px;'}
 
@@ -17,21 +17,23 @@
 
     %table.table.table-bordered.table-striped
       %tr
-        %th 中文名
+        %th{:style => 'width:80px;'} 中文名
         %th{:style => 'width:80px;'} 英文名
-        %th{:style => 'width:40px;'} 排序
+        %th{:style => 'width:100px;'} 缩略图
+        %th 描述
         %th{:style => 'width:140px;'}
     
-      - @categories.each do |category|
+      - @items.each do |item|
         %tr
-          %td= category.name
-          %td= category.ename
-          %td= category.sort
+          %td= item.name
+          %td= item.ename
+          %td= item.simg
+          %td= item.desc
           %td 
-            = link_to '展示', category, :class => 'btn btn-mini'
+            = link_to '展示', item, :class => 'btn btn-mini'
             \|
-            = link_to '修改', edit_category_path(category), :class => 'btn btn-mini btn-primary'
+            = link_to '修改', edit_item_path(item), :class => 'btn btn-mini btn-primary'
             \|
-            = link_to '删除', category, :method => :delete, :data => { :confirm => '你确定吗?' }, :class => 'btn btn-mini btn-danger'
+            = link_to '删除', item, :method => :delete, :data => { :confirm => '你确定吗?' }, :class => 'btn btn-mini btn-danger'
 
-    %a.btn.btn-mini.btn-success.pull-right{:href => new_category_path} 新增分类    
+    %a.btn.btn-mini.btn-success.pull-right{:href => new_item_path} 新增游戏

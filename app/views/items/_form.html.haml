@@ -1,0 +1,17 @@
+= simple_form_for(@item, :html => {:class => 'form-horizontal'}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, :label => '中文名'
+    = f.input :ename, :label => '英文书'
+    = f.input :flash, :label => '上传FLASH'
+    = f.input :bimg, :label => '上传大图'
+    = f.input :mimg, :label => '上传中图'
+    = f.input :simg, :label => '上传缩略图'
+    = f.input :desc, :label => '描述',  :as => :text, :input_html => {:rows => 3}
+    = f.input :howto, :label => '游戏玩法', :as => :text, :input_html => {:rows => 3}
+    = f.input :target, :label => '游戏目标', :as => :text, :input_html => {:rows => 3}
+    = f.input :params, :label => '游戏设置参数', :as => :text, :input_html => {:rows => 3}
+
+  .form-actions
+    = f.button :submit, :value => '保存', :class => 'btn btn-success'

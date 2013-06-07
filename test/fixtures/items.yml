@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  ename: MyString
+  flash: MyString
+  bimg: MyString
+  mimg: MyString
+  simg: MyString
+  desc: MyString
+  howto: MyString
+  target: MyString
+  size: MyString
+  params: MyString
+
+two:
+  name: MyString
+  ename: MyString
+  flash: MyString
+  bimg: MyString
+  mimg: MyString
+  simg: MyString
+  desc: MyString
+  howto: MyString
+  target: MyString
+  size: MyString
+  params: MyString
