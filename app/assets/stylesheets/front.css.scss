@@ -1,0 +1,51 @@
+@import "compass/reset";
+@import "compass/layout/grid-background";
+
+// min-height
+@import "compass/utilities/general/min";
+
+// round
+@import "compass/css3/border-radius";
+
+// floar
+@import "compass/utilities/general/float";
+
+body{
+width:100%;
+margin: 0px auto;
+@include min-height(1000px);
+}
+
+.wrapper{
+width:990px;
+margin:0 auto;
+height:30px;
+}
+
+.wrapper a{
+font-size:14px;
+line-height:30px;
+margin:0 5px;
+}
+
+.wrapper .left-links{
+@include float-left;
+width:490px;
+height:30px;
+line-height:30px;
+}
+
+.wrapper .left-links a{
+@include float-left;
+}
+
+.wrapper .right-links{
+@include float-right;
+width:490px;
+height:30px;
+line-height:30px;
+}
+
+.wrapper .right-links a{
+@include float-right;
+}

@@ -1,13 +1,5 @@
 Fg::Application.routes.draw do
 
-  resources :items
-
-
-  resources :tags
-
-
-  resources :categories
-
 
   root :to => "dashboard#index"
 
@@ -26,4 +18,13 @@ Fg::Application.routes.draw do
   match '/settings/contact_save', :to => "settings#contact_save"
   match '/settings/sysconfig', :to => "settings#sysconfig"
   match '/settings/sysconfig_save', :to => "settings#sysconfig_save"
+
+  #resource
+  resources :items
+  resources :tags
+  resources :categories
+
+  #front
+  match '/home', :to => 'home#index'
+
 end

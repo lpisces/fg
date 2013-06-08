@@ -6,4 +6,6 @@ class Item < ActiveRecord::Base
   mount_uploader :bimg, BimgUploader
   mount_uploader :simg, SimgUploader
   mount_uploader :flash, FlashUploader
+
+  has_many :tags
 end

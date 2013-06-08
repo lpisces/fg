@@ -18,7 +18,7 @@ end
 gem 'jquery-rails'
 
 gem 'thin'
-gem 'simple_form'
+gem 'simple_form', '~> 2.0.0'
 
 gem 'omniauth'
 gem 'omniauth-identity'
@@ -29,3 +29,5 @@ gem 'debugger'
 gem 'rails_kindeditor', '~> 0.3.19'
 
 gem 'carrierwave'
+gem 'mini_magick'
+gem 'simple_form_fancy_uploads'
