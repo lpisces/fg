@@ -3,8 +3,10 @@
   %head
     = render 'share/front/head'
   %body
-    .container#nav
+    #nav
       = render 'share/front/nav'
-    .container
-      .span25#body{:style => 'margin:0px;'}= yield
+    #header
+      = render 'share/front/header'
+    #content
+      = yield
     = render 'share/front/footer'

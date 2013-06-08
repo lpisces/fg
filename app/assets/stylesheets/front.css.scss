@@ -14,38 +14,69 @@ body{
 width:100%;
 margin: 0px auto;
 @include min-height(1000px);
+background-image:url(/front/images/topbg.jpg);
+background-repeat: repeat-x;
+background-color: #fff;
 }
 
-.wrapper{
-width:990px;
-margin:0 auto;
-height:30px;
+#nav{
+  background-image: url(/front/images/topnavbg.png);
+  background-color: #000;
+  .wrapper{
+  width:990px;
+  margin:0 auto;
+  height:32px;
+  }
+  
+  .wrapper a{
+  font-size:12px;
+  line-height:32px;
+  margin:0 5px;
+  color:#ccc;
+  text-decoration:none;
+  }
+
+  .wrapper a:hover{
+    color:#fff;
+  }
+  
+  .wrapper .left-links{
+  @include float-left;
+  width:490px;
+  height:32px;
+  line-height:32px;
+  }
+  
+  .wrapper .left-links a{
+  @include float-left;
+  }
+  
+  .wrapper .right-links{
+  @include float-right;
+  width:490px;
+  height:32px;
+  line-height:32px;
+  }
+  
+  .wrapper .right-links a{
+  @include float-right;
+  }
 }
 
-.wrapper a{
-font-size:14px;
-line-height:30px;
-margin:0 5px;
+#header{
+  height:106px;
+  width:990px;
+  margin:0 auto;
 }
 
-.wrapper .left-links{
-@include float-left;
-width:490px;
-height:30px;
-line-height:30px;
+#content{
+  width:990px;
+  @include min-height(800px); 
+  margin:0 auto;
 }
 
-.wrapper .left-links a{
-@include float-left;
-}
-
-.wrapper .right-links{
-@include float-right;
-width:490px;
-height:30px;
-line-height:30px;
-}
-
-.wrapper .right-links a{
-@include float-right;
+#footer{
+  width:990px;
+  @include min-height(100px); 
+  margin:0 auto;
 }
