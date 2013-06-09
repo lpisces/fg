@@ -24,7 +24,7 @@ margin: 0px auto;
 background-image:url(/front/images/topbg.jpg);
 background-repeat: repeat-x;
 background-color: #fff;
-font-family:"Microsoft Yahei","SimHei";
+font-family:"Microsoft Yahei","SimHei","Helvetica Neue";
 }
 
 #nav{
@@ -110,7 +110,9 @@ font-family:"Microsoft Yahei","SimHei";
     @include float-left;
     background-image: url(/front/images/catenavbg.png);
     background-color: #000;
+/*
     @include border-radius(5px);
+*/
     color:#fff;
     font-size:8px;
     a{
@@ -120,12 +122,64 @@ font-family:"Microsoft Yahei","SimHei";
       text-decoration:none;
       font-size:14px;
       padding:5px;
+      font-family:"Helvetica Neue";
+      font-weight:500;
     }
     a:hover{
       background-color: #fff;
       @include border-radius(3px);
       color:#41abff;
     }
+  }
+}
+
+.tag_nav{
+  border:1px solid #BED7E8;
+  @include min-height(110px);
+  background-color:#F8FBFD;
+  .block{
+    @include float-left;
+    width:319px;
+    padding:5px;
+    font-size:12px;
+    dl{
+      height:19px;
+      margin:5px 0 5px 0;
+    }
+    dt{
+      a{
+        margin-left:4px;
+      }
+      width:38px;
+      @include float-left;
+      background-image:url(/front/images/catebg.png);
+      height:19px;
+      line-height:19px;
+    }
+    dd{
+      @include float-left;
+      height:19px;
+      line-height:19px;
+      margin-left:3px;
+      width:274px;
+      overflow:hidden;
+      color:#BED7E8;
+    }
+    a{
+      font-size:12px;
+      color:#444;
+      text-decoration:none;
+      margin:0 2px;
+    }
+  }
+}
+
+.ranks{
+  .left{
+    border:1px solid #BED7E8;
+    @include min-height(300px);
+    background-color:#F8FBFD;
+    width:200px;
   }
 }
 
