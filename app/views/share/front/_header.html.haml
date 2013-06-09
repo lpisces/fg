@@ -1,2 +1,25 @@
-%a{:href => '/'}
+%a.logo{:href => '/'}
   %img{:style => 'height:66px;', :src =>  '/front/images/logo.png'}
+
+.center
+
+.search
+  %form{:action => '/search', :method => 'POST'}
+    %input{:type => 'text', :name => 'search', :size => '40'}
+    %input{:type => 'button', :name => 'search', :value => '搜索'}
+
+  .clearfix{:style => 'width:200px;'}
+  .hot
+    %a{:href => 'javascript:void(0)'} 美女小游戏
+    %a{:href => 'javascript:void(0)'} 休闲
+    %a{:href => 'javascript:void(0)'} 射击
+
+.clearfix{:style => 'width:990px;'}
+.cate_nav
+  %a{:href => 'javascript:void(0)'} 美女
+  \|
+  %a{:href => 'javascript:void(0)'} 休闲
+  \|
+  %a{:href => 'javascript:void(0)'} 射击
+
+  

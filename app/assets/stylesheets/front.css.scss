@@ -10,6 +10,13 @@
 // floar
 @import "compass/utilities/general/float";
 
+//clear
+@import "compass/utilities/general/clearfix";
+
+.clearfix{
+  @include clearfix;
+}
+
 body{
 width:100%;
 margin: 0px auto;
@@ -17,6 +24,7 @@ margin: 0px auto;
 background-image:url(/front/images/topbg.jpg);
 background-repeat: repeat-x;
 background-color: #fff;
+font-family:"Microsoft Yahei","SimHei";
 }
 
 #nav{
@@ -67,6 +75,58 @@ background-color: #fff;
   height:106px;
   width:990px;
   margin:0 auto;
+  .logo{
+    @include float-left;
+    display:block;
+    width:180px;
+  }
+  .center{
+    @include float-left;
+    width:505px;
+    height:66px;
+  }
+  .search{
+    form{
+      margin:5px;
+      @include float-right;
+    }
+    .hot{
+      width:200px;
+      @include float-right;
+      margin-right:80px;
+      a{
+        margin:0 3px;
+        font-size:12px;
+        text-decoration:none;
+      }
+    }
+    @include float-left;
+    width:305px;
+    height:66px;
+  }
+  .cate_nav{
+    height:40px;
+    width:100%;
+    @include float-left;
+    background-image: url(/front/images/catenavbg.png);
+    background-color: #000;
+    @include border-radius(5px);
+    color:#fff;
+    font-size:8px;
+    a{
+      line-height:40px;
+      color:#fff;
+      margin:0 5px;
+      text-decoration:none;
+      font-size:14px;
+      padding:5px;
+    }
+    a:hover{
+      background-color: #fff;
+      @include border-radius(3px);
+      color:#41abff;
+    }
+  }
 }
 
 #content{
