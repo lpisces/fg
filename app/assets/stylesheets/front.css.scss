@@ -20,7 +20,7 @@
 body{
 width:100%;
 margin: 0px auto;
-@include min-height(1000px);
+@include min-height(2000px);
 background-image:url(/front/images/topbg.jpg);
 background-repeat: repeat-x;
 background-color: #fff;
@@ -177,10 +177,102 @@ font-family:"Microsoft Yahei","SimHei","Helvetica Neue";
 .ranks{
   .left{
     border:1px solid #BED7E8;
-    @include min-height(300px);
     background-color:#F8FBFD;
-    width:200px;
+    width:199px;
+    @include float-left;
   }
+
+  .right{
+    border:1px solid #BED7E8;
+    background-color:#F8FBFD;
+    width:777px;
+    @include float-left;
+    margin-left:10px;
+  }
+
+  #played{
+    @include min-height(300px);
+    ul{
+      width:100%;
+      li{
+        float:left;
+        width:99px;
+        text-align:center;
+        border-bottom:1px solid #BED7E8;
+        background-color:#def3fc;
+        a{
+          font-size:14px;
+          text-decoration:none;
+          color:#444;
+          line-height:28px;
+        }
+        a:hover{
+          color:#FF6501;
+        }
+      }
+      li.active,
+      li:hover{
+        background-color:#F8FBFD;
+        border-bottom:none;
+      }
+      li:first-child{
+        border-right:1px solid #BED7E8;
+      }
+    }
+    div{
+    }
+    div:last-child{
+      display:none;
+    }
+  }
+  #hot-game{
+    @include min-height(200px);
+  }
+  #new-game{
+    margin-top:10px;
+    @include min-height(400px);
+    background-color:#fff;
+  }
+
+  #classic-game{
+    margin-top:10px;
+    @include min-height(400px);
+    background-color:#fff;
+  }
+
+  #rank-list{
+    @include min-height(710px);
+    margin-top:-300px;
+  }
+}
+
+.categories{
+  width:100%;
+  .row{
+    width:988;
+    height:400px;
+    border:1px solid #BED7E8;
+    margin-bottom:10px;
+    .block{
+      @include float-left;
+      width:493px;
+      height:400px;
+    }
+    :first-child{
+      border-right:1px solid #BED7E8;
+    }
+  }
+  .row.odd{
+    background-color:#F8FBFD;
+  }
+  
+}
+
+.friend-links{
+  background-color:#fff;
+  height:200px;
+  width:988px;
+  border:1px solid #BED7E8;
 }
 
 #content{
@@ -190,7 +282,28 @@ font-family:"Microsoft Yahei","SimHei","Helvetica Neue";
 }
 
 #footer{
-  width:990px;
-  @include min-height(100px); 
   margin:0 auto;
+  width:990px;
+  @include min-height(100px);
+  border-top:1px solid #eee;
+  margin-top:10px;
+       color:#ccc;
+  p{
+   float:right;
+   padding:5px 10px;
+  }
+  ul.links{
+   float:right;
+   li{
+     float:left;
+     list-style:none;
+     margin:0px;
+     padding:5px 10px;
+     a{
+       text-decoration:none;
+       font-size:12px;
+       color:#ccc;
+     }
+   }
+  }
 }

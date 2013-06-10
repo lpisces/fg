@@ -211,5 +211,47 @@
 .clearfix{:style => 'width:100%;height:10px;'}
 
 .ranks
-  .left
-  .right
+  .left#played
+    %ul
+      %li.active{:'data-block' => 'played'} 
+        %a.played{:href => 'javascript:void(0)'} 我玩过的
+      %li{:'data-block' => 'recommend'}
+        %a.played{:href => 'javascript:void(0)'} 推荐小游戏
+
+    .clearfix{:style => 'width:100%;height:10px;'}
+    .played.block
+      %p this is played
+    .recommend.block
+      %p this is recommend
+    
+  .right#hot-game
+  .right#new-game
+
+  .left#rank-list
+
+  .right#classic-game
+
+.clearfix{:style => 'width:100%;height:10px;'}
+.categories
+  .row
+    .block
+    .block
+  .row.odd
+    .block
+    .block
+
+  .row
+    .block
+    .block
+  .row.odd
+    .block
+    .block
+
+  .row
+    .block
+    .block
+  .row.odd
+    .block
+    .block
+
+.friend-links
