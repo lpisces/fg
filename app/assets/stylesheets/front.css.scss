@@ -275,6 +275,92 @@ font-family:"Microsoft Yahei","SimHei","Helvetica Neue";
   border:1px solid #BED7E8;
 }
 
+.breadcrumb{
+  width:988px;
+  border:1px solid #BED7E8;
+  border-top:none;
+  height:32px;
+  line-height:32px;
+  background-color:#F8FBFD;
+  font-size:12px;
+  color:#444;
+  span{
+    margin:0px 5px;
+  }
+  a{
+    text-decoration:none;
+    color:#444;
+  }
+  a:hover{
+    color:#FF6501;
+  }
+}
+
+.node{
+  .left{
+    border:1px solid #BED7E8;
+    background-color:#F8FBFD;
+    width:199px;
+    @include float-left;
+  }
+
+  .right{
+    border:1px solid #BED7E8;
+    background-color:#F8FBFD;
+    width:777px;
+    @include float-left;
+    margin-left:10px;
+  }
+
+  .rank-list{
+    height:600px;
+  }
+  .gallery-list{
+    height:386px;
+    margin-top:-388px;
+  }
+  .game-list{
+    height:1000px;
+  }
+}
+
+.game{
+  width:990px;
+  .detail{
+    border:1px solid #BED7E8;
+    background-color:#F8FBFD;
+    @include min-height(500px);
+  }
+  .left{
+    border:1px solid #BED7E8;
+    background-color:#F8FBFD;
+    width:777px;
+    @include float-left;
+  }
+  .right{
+    border:1px solid #BED7E8;
+    background-color:#F8FBFD;
+    width:199px;
+    @include float-left;
+    margin-left:10px;
+  }
+  #similar{
+    height:200px;
+  }
+  #recommend{
+    height:200px;
+    margin-top:10px;
+  }
+  #rank{
+    height:800px;
+    margin-top:-202px;
+  }
+  #comment{
+    height:377px;
+    margin-top:-377px;
+  }
+}
+
 #content{
   width:990px;
   @include min-height(800px); 

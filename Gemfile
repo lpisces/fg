@@ -31,3 +31,10 @@ gem 'rails_kindeditor', '~> 0.3.19'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'simple_form_fancy_uploads'
+
+
+gem 'sidekiq'
+gem 'slim', ">= 1.3.0"
+gem 'sinatra', '>= 1.3.0', :require => nil
+
+gem 'nokogiri'

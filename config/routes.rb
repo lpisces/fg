@@ -1,6 +1,5 @@
 Fg::Application.routes.draw do
 
-
   root :to => "dashboard#index"
 
   # login/logout/regsiter
@@ -27,4 +26,13 @@ Fg::Application.routes.draw do
   #front
   match '/home', :to => 'home#index'
 
+  #node category
+  match '/node/:id', :to => 'node#show'
+
+  #game
+  match "/game/:id", :to => 'game#show'
+
+  #sidekiq
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end
