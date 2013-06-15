@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608032803) do
+ActiveRecord::Schema.define(:version => 20130615070344) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -41,15 +41,19 @@ ActiveRecord::Schema.define(:version => 20130608032803) do
     t.string   "ename"
     t.string   "flash"
     t.string   "bimg"
-    t.string   "mimg"
     t.string   "simg"
     t.string   "desc"
-    t.string   "howto"
+    t.string   "operate"
     t.string   "target"
     t.string   "size"
     t.string   "params"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "play_link"
+    t.integer  "category_id"
+    t.string   "category"
+    t.string   "source"
+    t.string   "start"
   end
 
   create_table "kindeditor_assets", :force => true do |t|
