@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130615070344) do
+ActiveRecord::Schema.define(:version => 20130616112531) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -42,9 +42,6 @@ ActiveRecord::Schema.define(:version => 20130615070344) do
     t.string   "flash"
     t.string   "bimg"
     t.string   "simg"
-    t.string   "desc"
-    t.string   "operate"
-    t.string   "target"
     t.string   "size"
     t.string   "params"
     t.datetime "created_at",  :null => false
@@ -53,7 +50,16 @@ ActiveRecord::Schema.define(:version => 20130615070344) do
     t.integer  "category_id"
     t.string   "category"
     t.string   "source"
-    t.string   "start"
+    t.string   "tags"
+    t.text     "target"
+    t.text     "operate"
+    t.text     "desc"
+    t.text     "start"
+  end
+
+  create_table "items_tags", :force => true do |t|
+    t.integer "item_id"
+    t.integer "tag_id"
   end
 
   create_table "kindeditor_assets", :force => true do |t|

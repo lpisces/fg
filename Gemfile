@@ -3,6 +3,8 @@ source 'http://ruby.taobao.org'
 gem 'rails', '3.2.13'
 
 gem 'sqlite3'
+gem 'mysql2'
+gem 'sequel'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -38,3 +40,4 @@ gem 'slim', ">= 1.3.0"
 gem 'sinatra', '>= 1.3.0', :require => nil
 
 gem 'nokogiri'
+
