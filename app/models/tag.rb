@@ -1,5 +1,5 @@
 class Tag < ActiveRecord::Base
   attr_accessible :name, :sort
 
-  belongs_to :item
+  has_and_belongs_to_many :items
 end

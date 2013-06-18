@@ -15,3 +15,9 @@
 //= require kindeditor
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function() {
+  $('a.search_toggle').click(function() {
+    $('.search').toggle();
+  });
+});

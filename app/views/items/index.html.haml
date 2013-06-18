@@ -20,6 +20,7 @@
     .search.hide{:style => 'border:1px solid #eee;padding:20px 5px 10px 5px;'}
       = search_form_for @q, :builder => SimpleForm::FormBuilder, :html => {:class => 'form-horizontal'}, :url => items_path do |f|
         = f.input:name_cont, :label => '标题包含'
+        = f.input:tags_cont, :label => '标签包含'
         //- o = Object.new ; def o.name; '-'; end; def o.id; 0; end;
         = f.input :category_cont, :label => '分类', :collection => Category.all, :prompt => '请选择分类', :label_method => :name, :value_method => :name
         .form-actions
@@ -29,18 +30,19 @@
 
     %table.table.table-bordered.table-striped
       %tr
-        %th{:style => 'width:80px;'} 中文名
-        %th{:style => 'width:80px;'} 英文名
-        %th{:style => 'width:100px;'} 缩略图
+        %th{:style => 'width:80px;'} 缩略图
+        %th{:style => 'width:100px;'} 中文名
+        /%th{:style => 'width:80px;'} 英文名
         %th 描述
         %th{:style => 'width:140px;'}
     
       - @items.each do |item|
         %tr
-          %td= item.name
-          %td= item.ename
+          /%td= item.ename
           %td
             %img{:style => 'width:80px;height:80px;', :src => item.simg}
+          %td
+            %a{:href => item.play_link, :target => '_blank'}= item.name
           %td= item.desc
           %td 
             = link_to '展示', item, :class => 'btn btn-mini'
