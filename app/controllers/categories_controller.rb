@@ -8,7 +8,9 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    #@categories = Category.all
+    @q = Category.search(params[:q])
+    @categories = @q.result(:distinct => true).paginate(:per_page => 15, :page => params[:page]).order('id DESC')
 
     respond_to do |format|
       format.html # index.html.erb

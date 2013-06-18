@@ -13,6 +13,7 @@
 
   .clearfix.span20{:style => 'height:20px;'}
 
+
   .b{:style => 'padding:10px;margin:0px -1px;height:700px;border-top:none;border:1px solid #eee;'}
 
     %table.table.table-bordered.table-striped
@@ -32,5 +33,7 @@
             \|
             = link_to '删除', tag, :method => :delete, :data => { :confirm => '你确定吗?' }, :class => 'btn btn-mini btn-danger'
 
-
     %a.btn.btn-mini.btn-success.pull-right{:href => new_tag_path} 新增标签
+
+
+  .pull-right= will_paginate @tags, :renderer => BootstrapPagination::Rails

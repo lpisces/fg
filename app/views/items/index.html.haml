@@ -13,7 +13,19 @@
 
   .clearfix.span20{:style => 'height:20px;'}
 
-  .b{:style => 'padding:10px;margin:0px -1px;height:700px;border-top:none;border:1px solid #eee;'}
+  .b{:style => 'padding:10px;padding-bottom:50px;margin:0px -1px;border-top:none;border:1px solid #eee;'}
+
+    %a.btn.btn-mini.search_toggle{:href => 'javascript:void(0)'} 搜索
+    .clearfix{:style => 'height:10px;'}
+    .search.hide{:style => 'border:1px solid #eee;padding:20px 5px 10px 5px;'}
+      = search_form_for @q, :builder => SimpleForm::FormBuilder, :html => {:class => 'form-horizontal'}, :url => items_path do |f|
+        = f.input:name_cont, :label => '标题包含'
+        //- o = Object.new ; def o.name; '-'; end; def o.id; 0; end;
+        = f.input :category_cont, :label => '分类', :collection => Category.all, :prompt => '请选择分类', :label_method => :name, :value_method => :name
+        .form-actions
+          = f.submit :class => 'btn btn-success btn-mini', :value => '查找'
+          %a.btn.btn-mini{:href => items_path} 重置
+    %br/
 
     %table.table.table-bordered.table-striped
       %tr
@@ -38,3 +50,5 @@
             = link_to '删除', item, :method => :delete, :data => { :confirm => '你确定吗?' }, :class => 'btn btn-mini btn-danger'
 
     %a.btn.btn-mini.btn-success.pull-right{:href => new_item_path} 新增游戏
+
+  .pull-right= will_paginate @items, :renderer => BootstrapPagination::Rails

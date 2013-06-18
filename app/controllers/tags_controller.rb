@@ -8,7 +8,9 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all
+    #@tags = Tag.all
+    @q = Tag.search(params[:q])
+    @tags = @q.result(:distinct => true).paginate(:per_page => 15, :page => params[:page]).order('id DESC')
 
     respond_to do |format|
       format.html # index.html.erb

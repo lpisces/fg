@@ -7,7 +7,9 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    #@items = Item.all
+    @q = Item.search(params[:q])
+    @items = @q.result(:distinct => true).paginate(:per_page => 15, :page => params[:page]).order('id DESC')
 
     respond_to do |format|
       format.html # index.html.erb

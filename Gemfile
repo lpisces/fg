@@ -41,3 +41,7 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 
 gem 'nokogiri'
 
+gem 'ransack'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
+gem 'i18n'
