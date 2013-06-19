@@ -4,7 +4,11 @@ App:
 
 
 Nav:
-  items: [{cname: '系统设置', ename: ['settings'], link: '/settings'}, {cname: '内容管理', ename: ['content', 'categories', 'tags', 'items'], link: '/categories'}]
+  items: [
+    {cname: '系统设置', ename: ['settings'], link: '/settings'}, 
+    {cname: '内容管理', ename: ['content', 'categories', 'tags', 'items'], link: '/categories'},
+    {cname: '首页管理', ename: ['home_tags'], link: '/home_tags'}
+  ]
 
 
 Sidebar:
@@ -28,6 +32,19 @@ Sidebar:
             cname: '游戏管理', 
             ename: 'items', 
             link: '/items'
+          },
+        ]
+    }
+  home_setting: 
+    {
+      cname: '首页管理', 
+      ename: 'home_setting', 
+      items: 
+        [
+          {
+            cname: '标签管理', 
+            ename: 'home_tags', 
+            link: '/home_tags'
           }
         ]
     }

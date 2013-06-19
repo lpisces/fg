@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
-  layout 'front'
+  layout 'admin', :except => [:index]
+
   def index
+    render :layout => 'front'
   end
+
 end

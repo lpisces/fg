@@ -42,8 +42,8 @@
           %td
             %img{:style => 'width:80px;height:80px;', :src => item.simg}
           %td
-            %a{:href => item.play_link, :target => '_blank'}= item.name
-          %td= item.desc
+            %a{:href => item.play_link, :target => '_blank', :style => 'font-size:12px;'}= item.name
+          %td{:style => 'font-size:12px;'}= item.desc
           %td 
             = link_to '展示', item, :class => 'btn btn-mini'
             \|

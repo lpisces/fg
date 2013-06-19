@@ -32,6 +32,11 @@ Fg::Application.routes.draw do
   #game
   match "/game/:id", :to => 'game#show'
 
+  # home tags config 
+  match "/home_tags", :to => 'home_tags#setting'
+  match "/home_tags/config", :to => 'home_tags#setting'
+  match "/home_tags/config_save", :to => 'home_tags#setting_save'
+
   #sidekiq
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

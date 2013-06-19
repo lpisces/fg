@@ -1,0 +1,26 @@
+- @module = :home_setting
+= render 'share/admin/sidebar'
+
+.block.span19.pull-left{:style => 'height:200px;margin-left:45px;'}
+  - if flash[:notice]
+    .alert.alert-success.alert-block{:style => ''}
+      %button.close{"data-dismiss" => "alert", :type => "button"} &times;
+      = flash[:notice]
+
+  .navbar{:style => 'margin:0px;'}
+    .navbar-inner{:style => 'line-height:30px;'}
+      标签管理
+
+  .clearfix.span20{:style => 'height:20px;'}
+
+  .b{:style => 'padding:10px;padding-bottom:50px;margin:0px -1px;border-top:none;border:1px solid #eee;'}
+
+    = form_tag('/home_tags/setting_save', {:class => 'form-horizontal'}) do
+      .control-group
+        %label.control-label{:for => "about", :style => 'width:80px;'} 关于我们
+        .controls{:style => 'margin-left:100px;'}
+          %textarea#about{:name => 'about'}= ''
+  
+      .control-group
+        .controls{:style => 'margin-left:100px;'}
+          %button.btn.btn-mini.btn-success{:type => "submit"} 保存
